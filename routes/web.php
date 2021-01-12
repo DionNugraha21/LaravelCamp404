@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,8 @@ Route::get('/', function () {
 Route::get('/beranda', [MenuController::class, 'beranda']);
 Route::get('/info_kegiatan', [MenuController::class, 'info_kegiatan']);
 Route::get('/data_mahasiswa', [MenuController::class, 'data_mahasiswa']);
+Route::resource('siswa', SiswaController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
