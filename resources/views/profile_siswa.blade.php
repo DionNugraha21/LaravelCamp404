@@ -18,7 +18,9 @@
                     <h4 class="col-4">Tanggal Lahir</h4>
                     <h4><strong>{{$siswa->tgl_lahir}}</strong></h4>
                 </div>
+                @can('isAdmin')
                 <a href="{{route('siswa.index')}}" class="btn btn-danger mt-3 float-right">Back</a>
+                @endcan
             </div>
         </div>
     </div>
